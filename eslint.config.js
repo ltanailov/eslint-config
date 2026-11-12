@@ -61,7 +61,9 @@ export default defineConfig([
       sourceType: 'module',
       globals: { ...globals.browser },
       parserOptions: {
-        // Type-aware линтинг (нужен для strict-boolean-expressions и no-unsafe-*)
+        // Type-aware линтинг (нужен для strict-boolean-expressions и no-unsafe-*).
+        // ВАЖНО для TypeScript 5: в tsconfig.app.json и tsconfig.node.json
+        // должно быть "strict": true (или как минимум "strictNullChecks": true).
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
